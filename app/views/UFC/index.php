@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <h3 class=""><?= $data['title']; ?></h3>
+            <h3 class="titel"><?= $data['title']; ?></h3>
         </div>
         <div class="col-3"></div>
     </div>
@@ -20,20 +20,22 @@
                 <thead>
                     <tr>
                         <th scope="col">Naam</th>
-                        <th scope="col">Nettowaarde (miljoen)</th>
-                        <th scope="col">land</th>
-                        <th scope="col">Mobiel</th>
+                        <th scope="col">RanglijstNummer</th>
+                        <th scope="col">Lengte</th>
+                        <th scope="col">Gewicht</th>
                         <th scope="col">Leeftijd</th>
+                        <th scope="col">WinstDoorKnockout</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data['Zangeres'] as $Zangeres) : ?>
+                    <?php foreach ($data['UFC'] as $UFC) : ?>
                         <tr>
-                            <td><?= $Zangeres->Naam; ?></td>
-                            <td><?= $Zangeres->Nettowaarde; ?></td>
-                            <td><?= $Zangeres->Land; ?></td>
-                            <td><?= $Zangeres->Mobiel; ?></td>
-                            <td><?= $Zangeres->Leeftijd; ?></td>
+                            <td><?= $UFC->Naam; ?></td>
+                            <td><?= $UFC->RanglijstNummer; ?></td>
+                            <td><?= $UFC->Lengte; ?></td>
+                            <td><?= $UFC->Gewicht; ?></td>
+                            <td><?= $UFC->Leeftijd; ?></td>
+                            <td><?= $UFC->WinstDoorKnockout; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

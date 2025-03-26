@@ -347,55 +347,60 @@ VALUES
  ,('Madonna', 575,'Verenigde Staten', '+13425 182345', 65, 1, NULL, SYSDATE(6), SYSDATE(6))
  ,('Taylor Swift', 570,'Verenigde Staten', '+13421 231356', 34, 1, NULL, SYSDATE(6), SYSDATE(6))
  ,('Beyoncé', 420,'Verenigde Staten', '+18723 213481', 41, 1, NULL, SYSDATE(6), SYSDATE(6))
- ,('Jennifer Lopez', 400,'Verenigde Staten', '+16254 751243', 54, 1, NULL, SYSDATE(6), SYSDATE(6));
+ ,('Jennifer Lopez', 400,'Verenigde Staten', '+16254 751243', 54, 1, NULL, SYSDATE(6), SYSDATE(6));      
 
  -- Step: 14
 -- *****************************************************************************************************
--- Doel : Maak een nieuwe tabel aan met de naam Zangeres
+-- Doel : Maak een nieuwe tabel aan met de naam Ufc
 -- *****************************************************************************************************
 -- Versie       Datum           Auteur              Omschrijving
 -- ******       *****           ******              ************
--- 01           18-03-2025      Arjan de Ruijter    Tabel Zangeres
+-- 01           26-03-2025      Arjan de Ruijter    Tabel Ufc
 -- *****************************************************************************************************
--- Onderstaande velden zelf toevoegen aan de tabel Zangeres
+-- Onderstaande velden zelf toevoegen aan de tabel Ufc
 -- *****************************************************************************************************
 
-CREATE TABLE List
+CREATE TABLE Ufc
 (
-     Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
-    ,Naam               VARCHAR(30)                 NOT NULL
-    ,prioriteit         SMALLINT        UNSIGNED    NOT NULL
-    ,tijd               DATETIME(6)                NOT NULL
-    ,IsActief           BIT                         NOT NULL        DEFAULT 1
-    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
-    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
-    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
-    ,CONSTRAINT         PK_List_Id              PRIMARY KEY     CLUSTERED(Id)
+     Id                 SMALLINT        UNSIGNED       NOT NULL        AUTO_INCREMENT
+    ,Naam               VARCHAR(50)                   NOT NULL
+    ,RanglijstNummer    INT             UNSIGNED       NOT NULL
+    ,Lengte             DECIMAL(2,2)    UNSIGNED       NOT NULL
+    ,Gewicht            INT             UNSIGNED       NOT NULL
+    ,Leeftijd           INT             UNSIGNED       NOT NULL
+    ,WinstDoorKnockout  INT             UNSIGNED       NOT NULL
+    ,IsActief           BIT                            NOT NULL        DEFAULT 1
+    ,Opmerking          VARCHAR(255)                       NULL        DEFAULT NULL
+    ,DatumAangemaakt    DATETIME(6)                    NOT NULL
+    ,DatumGewijzigd     DATETIME(6)                    NOT NULL
+    ,CONSTRAINT         PK_Ufc_Id       PRIMARY KEY    CLUSTERED(Id)
 ) ENGINE=InnoDB;
 
 -- Step: 15
 -- *****************************************************************
--- Doel : Vul de tabel Zangeres met gegevens
+-- Doel : Vul de tabel Ufc met gegevens
 -- *****************************************************************
 -- Versie       Datum           Auteur              Omschrijving
 -- ******       *****           ******              ************
--- 01           18-3-2025      Arjan de Ruijter     Vulling Zangeres
+-- 01           26-3-2025      Arjan de Ruijter     Vulling Ufc
 -- *****************************************************************
 
-INSERT INTO List
+INSERT INTO Ufc
 (
       Naam
-     ,prioriteit
-     ,tijd
+     ,RanglijstNummer
+     ,Lengte
+     ,Gewicht
+     ,Leeftijd
+     ,WinstDoorKnockout
      ,IsActief
      ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
-
 VALUES
-  ('bungie jumpen', 1, '2030-03-18 12:00:00', 1, NULL, SYSDATE(6), SYSDATE(6))
- ,('karten', 2, '2055-03-18 14:00:00', 1, NULL, SYSDATE(6), SYSDATE(6))
- ,('new york', 3, '2045-03-18 16:00:00', 1, NULL, SYSDATE(6), SYSDATE(6))
- ,('disney', 4, '2028-03-18 18:00:00', 1, NULL, SYSDATE(6), SYSDATE(6))
- ,('Vrienden', 5, '2065-03-18 20:00:00', 1, NULL, SYSDATE(6), SYSDATE(6));
+  ('Islam Makhachev', 3, 1.78, 70, 32, 5, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Jon Jones', 1, 1.93, 112, 36, 11, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Israel Adesanya', 5, 1.93, 84, 34, 16, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Alexander Volkanovski', 2, 1.68, 66, 35, 13, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Leon Edwards', 4, 1.83, 77, 32, 8, 1, NULL, SYSDATE(6), SYSDATE(6));
